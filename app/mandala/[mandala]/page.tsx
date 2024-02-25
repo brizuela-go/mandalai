@@ -16,6 +16,16 @@ export default function Mandala() {
   const [analysis, setAnalysis] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (!isCreated) {
+      return;
+    }
+
+    analyzeImage(downloadURL)
+      .then((data) => setAnalysis(data))
+      .finally(() => setLoading(false));
+  }, [isCreated, downloadURL]);
+
   const mandalas = [
     {
       title: "rainbow",
@@ -110,16 +120,6 @@ export default function Mandala() {
     console.log(data);
     return data.text;
   }
-
-  useEffect(() => {
-    if (!isCreated) {
-      return;
-    }
-
-    analyzeImage(downloadURL)
-      .then((data) => setAnalysis(data))
-      .finally(() => setLoading(false));
-  }, [isCreated, downloadURL]);
 
   return (
     <>
