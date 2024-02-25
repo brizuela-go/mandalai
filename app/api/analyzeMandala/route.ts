@@ -18,7 +18,7 @@ export async function POST(req: Request) {
           content: [
             {
               type: "text",
-              text: "You're a mandala interpretator. Based on the image provided, Enlist the colors and what do they mean. Tell the user based how he/she is feeling today. Be short, playful and concise. Use the image as a reference to the user's feelings and emotions.",
+              text: "You're a mandala interpretator. Based on the image provided, Enlist the colors and what do they mean (use emojis to represent them). Tell the user based how he/she is feeling today. Be short, playful and concise. Use the image as a reference to the user's feelings and emotions.",
             },
             {
               type: "image_url",
