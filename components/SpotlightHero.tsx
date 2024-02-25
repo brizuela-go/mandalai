@@ -1,5 +1,4 @@
 import React from "react";
-import { cn } from "@/utils/cn";
 import { Spotlight } from "@/components/ui/spotlight";
 
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -18,13 +17,13 @@ export function SpotlightHero() {
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           <TextGenerateEffect words={words} />
         </h1>
-        // Button code
+
         <div className="flex justify-center mt-8">
           <Link
             href="/magic"
             className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 fadeIn"
           >
-            Let's create a Mandala
+            Let&apos;s create a Mandala
           </Link>
         </div>
       </div>

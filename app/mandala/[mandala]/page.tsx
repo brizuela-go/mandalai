@@ -8,6 +8,7 @@ import { storage } from "@/utils/firebaseClient";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 export default function Mandala() {
+  const svgRef = useRef(null);
   const params = useParams();
   const [selectedColor, setSelectedColor] = useState("#D25BC8");
   const [downloadURL, setDownloadURL] = useState("");
@@ -29,8 +30,6 @@ export default function Mandala() {
   if (!mandala) {
     return <h1>Not found</h1>;
   }
-
-  const svgRef = useRef(null);
 
   // Function to convert SVG to canvas
   const convertSvgToCanvas = (svg: SVGSVGElement) => {
@@ -113,11 +112,13 @@ export default function Mandala() {
   }
 
   useEffect(() => {
-    if (isCreated) {
-      analyzeImage(downloadURL)
-        .then((data) => setAnalysis(data))
-        .finally(() => setLoading(false));
+    if (!isCreated) {
+      return;
     }
+
+    analyzeImage(downloadURL)
+      .then((data) => setAnalysis(data))
+      .finally(() => setLoading(false));
   }, [isCreated, downloadURL]);
 
   return (
