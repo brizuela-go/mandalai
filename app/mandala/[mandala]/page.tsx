@@ -170,13 +170,16 @@ export default function Mandala() {
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-neutral-200"></div>
         </div>
       ) : (
-        <div className="h-[50rem] w-full bg-black flex-col bg-dot-white/[0.2] relative flex items-center justify-center text-center">
+        <div className="h-[50rem] w-full bg-black flex-col bg-dot-white/[0.2] relative flex items-center justify-center text-center max-sm:my-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto p-4">
             {/* Minimalist card for the text */}
             {analysis && (
               <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-4 flex items-center justify-center">
-                <p className="text-sm md:text-sm font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                  <TextGenerateEffect words={analysis} />
+                <p>
+                  <TextGenerateEffect
+                    className="text-sm md:text-lg font-semibold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 tracking-tight"
+                    words={analysis}
+                  />
                 </p>
               </div>
             )}
